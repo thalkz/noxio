@@ -1,6 +1,6 @@
 name: noxio
 description: Competitive board game
-version: 2.0.0+5
+version: 2.0.1+6
 
 environment:
   sdk: ">=2.3.0 <3.0.0"
