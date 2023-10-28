@@ -130,14 +130,14 @@ class OnlineMove {
   Move move;
 
   OnlineMove.fromSnap(DocumentSnapshot snap) {
-    date = snap.data['date'].toDate();
-    Map fromMap = snap.data['from'];
+    date = snap.get('date').toDate();
+    Map fromMap = snap.get('from');
     Cell from = Cell(fromMap['x'], fromMap['y'], state: CellState.values[fromMap['state']]);
-    Map toMap = snap.data['to'];
+    Map toMap = snap.get('to');
     Cell to = Cell(toMap['x'], toMap['y'], state: CellState.values[toMap['state']]);
-    if (snap.data['type'] == MoveType.duplicate.index) {
+    if (snap.get('type') == MoveType.duplicate.index) {
       move = Move.duplicate(from, to);
-    } else if (snap.data['type'] == MoveType.jump.index) {
+    } else if (snap.get('type') == MoveType.jump.index) {
       move = Move.jump(from, to);
     }
   }
@@ -151,11 +151,11 @@ class Game {
   Player startingPlayer;
 
   Game.fromSnap(DocumentSnapshot snap, {@required bool isCreator}) {
-    id = snap.documentID;
-    Player creator = Player.values[snap.data['creator']];
+    id = snap.id;
+    Player creator = Player.values[snap.get('creator')];
     me = isCreator ? creator : Rules.other(creator);
-    pending = snap.data['pending'];
-    boardIndex = snap.data['board_index'];
-    startingPlayer = Player.values[snap.data['starting_player']];
+    pending = snap.get('pending');
+    boardIndex = snap.get('board_index');
+    startingPlayer = Player.values[snap.get('starting_player')];
   }
 }

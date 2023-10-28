@@ -73,7 +73,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 padding: const EdgeInsets.all(16),
                 child: Text(
                   'Choose Player 1 Color',
-                  style: Theme.of(context).textTheme.title,
+                  style: Theme.of(context).textTheme.titleMedium,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -103,7 +103,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 padding: const EdgeInsets.all(16),
                 child: Text(
                   'Choose Player 2 Color',
-                  style: Theme.of(context).textTheme.title,
+                  style: Theme.of(context).textTheme.titleMedium,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -131,7 +131,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 padding: const EdgeInsets.all(16),
                 child: Text(
                   'Choose Theme',
-                  style: Theme.of(context).textTheme.title,
+                  style: Theme.of(context).textTheme.titleMedium,
                   textAlign: TextAlign.center,
                 ),
               ),

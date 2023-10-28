@@ -43,7 +43,7 @@ class _PlayerWidgetState extends State<PlayerWidget> {
                 height: 25,
                 child: Text(
                   _cellCount(model),
-                  style: Theme.of(context).textTheme.subtitle,
+                  style: Theme.of(context).textTheme.titleSmall,
                 ),
               ),
             ],

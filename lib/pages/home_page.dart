@@ -3,9 +3,8 @@ import 'dart:async';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:noxio/models/app_model.dart';
 import 'package:noxio/models.dart';
-import 'package:noxio/utils/board_builder.dart';
+import 'package:noxio/models/app_model.dart';
 import 'package:noxio/utils/colors.dart';
 import 'package:noxio/utils/database.dart';
 import 'package:provider/provider.dart';
@@ -44,28 +43,25 @@ class _HomePageState extends State<HomePage> {
                 Text(
                   'noxio',
                   style: GoogleFonts.righteous(
-                    textStyle: Theme.of(context).textTheme.display3,
+                    textStyle: Theme.of(context).textTheme.titleMedium,
                     color: NoxioColors.black(context),
                   ),
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 32),
-                RaisedButton(
+                ElevatedButton(
                   onPressed: () => showComputerGameDialog(),
                   child: Text("Play vs Computer"),
-                  padding: const EdgeInsets.all(16),
                 ),
                 SizedBox(height: 8),
-                RaisedButton(
+                ElevatedButton(
                   onPressed: () => showOfflineGameDialog(),
                   child: Text("Play Offline"),
-                  padding: const EdgeInsets.all(16),
                 ),
                 SizedBox(height: 8),
-                RaisedButton(
+                ElevatedButton(
                   onPressed: () => showOnlineGameDialog(),
                   child: Text("Play Online"),
-                  padding: const EdgeInsets.all(16),
                 ),
               ],
             ),
@@ -85,49 +81,45 @@ class _HomePageState extends State<HomePage> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () => Navigator.popAndPushNamed(
                   context,
                   '/game',
                   arguments: GameParams(seconds: 0, mode: Mode.ai, aiLevel: 0),
                 ),
                 child: Text("Easy"),
-                padding: const EdgeInsets.all(16),
               ),
               SizedBox(height: 8),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () => Navigator.popAndPushNamed(
                   context,
                   '/game',
                   arguments: GameParams(seconds: 0, mode: Mode.ai, aiLevel: 1),
                 ),
                 child: Text("Normal"),
-                padding: const EdgeInsets.all(16),
               ),
               SizedBox(height: 8),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () => Navigator.popAndPushNamed(
                   context,
                   '/game',
                   arguments: GameParams(seconds: 0, mode: Mode.ai, aiLevel: 2),
                 ),
                 child: Text("Hard"),
-                padding: const EdgeInsets.all(16),
               ),
               SizedBox(height: 8),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () => Navigator.popAndPushNamed(
                   context,
                   '/game',
                   arguments: GameParams(seconds: 0, mode: Mode.ai, aiLevel: 3),
                 ),
                 child: Text("Expert"),
-                padding: const EdgeInsets.all(16),
               ),
             ],
           ),
           actions: <Widget>[
-            FlatButton(
+            TextButton(
               child: Text('Cancel'),
               onPressed: () => Navigator.pop(context),
             )
@@ -147,39 +139,36 @@ class _HomePageState extends State<HomePage> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () => Navigator.popAndPushNamed(
                   context,
                   '/game',
                   arguments: GameParams(seconds: 30, mode: Mode.offline),
                 ),
                 child: Text("30s per turn"),
-                padding: const EdgeInsets.all(16),
               ),
               SizedBox(height: 8),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () => Navigator.popAndPushNamed(
                   context,
                   '/game',
                   arguments: GameParams(seconds: 60, mode: Mode.offline),
                 ),
                 child: Text("60s per turn"),
-                padding: const EdgeInsets.all(16),
               ),
               SizedBox(height: 8),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () => Navigator.popAndPushNamed(
                   context,
                   '/game',
                   arguments: GameParams(seconds: 0, mode: Mode.offline),
                 ),
                 child: Text("Unlimited"),
-                padding: const EdgeInsets.all(16),
               ),
             ],
           ),
           actions: <Widget>[
-            FlatButton(
+            TextButton(
               child: Text('Cancel'),
               onPressed: () => Navigator.pop(context),
             )
@@ -257,7 +246,7 @@ class _OnlineGameDialogState extends State<OnlineGameDialog> {
         ),
       ),
       actions: <Widget>[
-        FlatButton(
+        TextButton(
           child: Text('Cancel'),
           onPressed: () => Navigator.pop(context),
         )

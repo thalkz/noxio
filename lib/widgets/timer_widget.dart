@@ -74,7 +74,7 @@ class _TimerBarWitState extends State<TimerWidget> with TickerProviderStateMixin
                         model.currentPlayer == widget.player && model.winner == null
                             ? timeLeft(model.turnDuration)
                             : '-',
-                        style: Theme.of(context).textTheme.title,
+                        style: Theme.of(context).textTheme.titleMedium,
                         textAlign: TextAlign.right,
                       ),
                     );

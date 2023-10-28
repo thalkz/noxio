@@ -16,7 +16,7 @@ class NoxioThemes {
       iconTheme: IconThemeData(color: Colors.black38),
     ),
     brightness: Brightness.light,
-    textTheme: GoogleFonts.muliTextTheme(),
+    textTheme: GoogleFonts.mulishTextTheme(),
     buttonTheme: ButtonThemeData(
       shape: StadiumBorder(),
       textTheme: ButtonTextTheme.primary,
@@ -26,7 +26,7 @@ class NoxioThemes {
   ThemeData get darkTheme => ThemeData(
     brightness: Brightness.dark,
     primarySwatch: Colors.lightBlue,
-    textTheme: GoogleFonts.muliTextTheme(
+    textTheme: GoogleFonts.mulishTextTheme(
       TextTheme(),
     ),
     buttonTheme: ButtonThemeData(
@@ -37,7 +37,7 @@ class NoxioThemes {
   ThemeData get blackTheme => ThemeData(
     brightness: Brightness.dark,
     primarySwatch: Colors.lightBlue,
-    textTheme: GoogleFonts.muliTextTheme(
+    textTheme: GoogleFonts.mulishTextTheme(
       TextTheme(),
     ),
     buttonTheme: ButtonThemeData(
@@ -54,11 +54,9 @@ class NoxioThemes {
   ThemeData get skyTheme => ThemeData(
     brightness: Brightness.dark,
     scaffoldBackgroundColor: Colors.indigo.shade900,
-    backgroundColor: Colors.indigo.shade900,
     dialogBackgroundColor: Colors.indigo.shade800,
     appBarTheme: AppBarTheme(color: Colors.indigo.shade700),
-    primarySwatch: Colors.lightBlue,
-    textTheme: GoogleFonts.muliTextTheme(
+    textTheme: GoogleFonts.mulishTextTheme(
       TextTheme(),
     ),
     buttonTheme: ButtonThemeData(
@@ -67,6 +65,6 @@ class NoxioThemes {
     bottomSheetTheme: BottomSheetThemeData(
       backgroundColor: Colors.indigo,
       modalBackgroundColor: Colors.indigo,
-    ),
+    ), colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.lightBlue).copyWith(background: Colors.indigo.shade900),
   );
 }
